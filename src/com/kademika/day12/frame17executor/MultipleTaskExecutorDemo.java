@@ -1,6 +1,9 @@
 package com.kademika.day12.frame17executor;
 
+import com.kademika.day11.frame02byte.byteToSout;
+
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
@@ -23,15 +26,23 @@ public class MultipleTaskExecutorDemo {
                 futures.add(executor.submit(new Task()));
             }
 
-            for (Future<Integer> future : futures) {
-                results.add(future.get());
+            while (!futures.isEmpty()) {
+
+//                for (Future<Integer> future : futures) {
+//                    if (future.isDone()) {
+//                        System.out.println(future.get());
+//                        futures.remove(future);
+//                    }
+//                }
+
+//                results.add(future.get());
             }
         } finally {
             executor.shutdown();
         }
 
-        for (Integer i : results) {
-            System.out.println(i);
-        }
+//        for (Integer i : results) {
+//            System.out.println(i);
+//        }
     }
 }

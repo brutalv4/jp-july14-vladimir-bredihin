@@ -22,7 +22,6 @@ public class NiceWinterDayDemo {
         for (int i = 0; i < 10; i++) {
 
             final Skater skater = new Skater("Skater " + i);
-
             Thread thread = new Thread(new Runnable() {
                 @Override
                 public void run() {
@@ -54,9 +53,10 @@ public class NiceWinterDayDemo {
 //            }
 
             sleep(random.nextInt(1000));
+
         }
 
-//        System.out.println("Good night. See you tomorrow!!");
+        System.out.println("Good night. See you tomorrow!!");
     }
 
     private static void sleep(int timeout) {
