@@ -38,6 +38,7 @@ public class NonBlockingSelectorServer {
                 if (key.isValid()) {
                     if (key.isAcceptable()) {
                         // someone connected to our SSChanel
+//                        System.out.println();
                         accept(key);
                     } else if (key.isReadable()) {
                         read(key);
